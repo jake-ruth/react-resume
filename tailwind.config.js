@@ -27,6 +27,18 @@ module.exports = {
             strokeDashoffset: '-360%',
           },
         },
+        fadeIn: {
+          '0%': {opacity: '0', transform: 'translateY(20px)'},
+          '100%': {opacity: '1', transform: 'translateY(0)'},
+        },
+        fadeInSlow: {
+          '0%': {opacity: '0', transform: 'translateY(10px)'},
+          '100%': {opacity: '1', transform: 'translateY(0)'},
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 1s ease-out forwards',
+        fadeInSlow: 'fadeInSlow 2s ease-out forwards',
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},

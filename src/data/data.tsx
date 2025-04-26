@@ -1,18 +1,8 @@
-import {
-  AcademicCapIcon,
-  ArrowDownTrayIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
+import {AcademicCapIcon, ArrowDownTrayIcon, CalendarIcon, MapIcon, SparklesIcon} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -44,8 +34,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Jake Ruth Portfolio',
+  description: 'Jake Ruth Portfolio',
 };
 
 /**
@@ -63,24 +53,20 @@ export const SectionId = {
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
+const yearsExperience = new Date().getFullYear() - 2018;
 
 /**
  * Hero section
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `Hi, I'm Jake Ruth`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        I'm a <strong className="text-stone-100">Full Stack Software Engineer</strong> with a passion for finding
+        elegant solutions to complex problems. I have over {yearsExperience} years of experience working to create
+        enterprise level modern applications using the latest technologies.
       </p>
     </>
   ),
@@ -99,21 +85,36 @@ export const heroData: Hero = {
   ],
 };
 
+function calculateAge() {
+  const birthday = new Date('1996-11-30');
+  const today = new Date();
+
+  let age = today.getFullYear() - birthday.getFullYear();
+
+  const hasHadBirthdayThisYear =
+    today.getMonth() > birthday.getMonth() ||
+    (today.getMonth() === birthday.getMonth() && today.getDate() >= birthday.getDate());
+
+  if (!hasHadBirthdayThisYear) {
+    age--;
+  }
+
+  return String(age);
+}
+
 /**
  * About section
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `I'm a passionate software engineer who loves building thoughtful, high-quality applications. 
+  I've worked extensively with technologies like React, React Native, TypeScript, Node.js, GraphQL, Next.js, Postgres, MongoDB, and many more. 
+  I take pride in crafting software that’s not just functional, but truly impactful.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Annapolis, MD', Icon: MapIcon},
+    {label: 'Age', text: calculateAge(), Icon: CalendarIcon},
+    {label: 'Interests', text: 'Music, Skateboarding, Surfing', Icon: SparklesIcon},
+    {label: 'Education', text: 'UMBC', Icon: AcademicCapIcon},
   ],
 };
 
@@ -129,11 +130,7 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
+        name: 'Conversational Spanish',
         level: 3,
       },
     ],
@@ -153,6 +150,10 @@ export const skills: SkillGroup[] = [
         name: 'GraphQL',
         level: 6,
       },
+      {
+        name: 'CSS Frameworks/Libraries',
+        level: 6,
+      },
     ],
   },
   {
@@ -163,11 +164,19 @@ export const skills: SkillGroup[] = [
         level: 8,
       },
       {
-        name: 'Rust',
+        name: 'Spring Boot',
+        level: 4,
+      },
+      {
+        name: 'GraphQL',
         level: 5,
       },
       {
-        name: 'Golang',
+        name: 'Relational Databases (Postgres, MySQL, etc)',
+        level: 5,
+      },
+      {
+        name: 'NoSQL Databases (Mongo, Redis, etc)',
         level: 4,
       },
     ],
@@ -180,11 +189,19 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
-        name: 'Flutter',
-        level: 4,
+        name: 'Expo',
+        level: 9,
       },
       {
         name: 'Swift',
+        level: 4,
+      },
+      {
+        name: 'Kotlin',
+        level: 3,
+      },
+      {
+        name: 'Java',
         level: 3,
       },
     ],
@@ -268,39 +285,57 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-  {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'May 2018',
+    location: 'University of Maryland, Baltimore County',
+    title: 'Bachelors of Science - Information Systems',
+    content: <p></p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: '2023 - Present',
+    location: 'Neurofret, LLC',
+    title: 'Lead Software Engineer',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Created cross-platform mobile application for ear training on the guitar using React Native, Expo, Typescript,
+        Swift, Kotlin, and many more technologies. As the app has grown, more teammates have been added and I have taken
+        on the lead software engineer role, managing the team and growth of the application.
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: '2023-2025',
+    location: 'Acuity, Inc',
+    title: 'Senior Full-Stack Engineer',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Developed full-stack solutions for federal government contracts. Used React, Spring Boot, Node.js, GraphQL,
+        Postgres, and Elasticsearch. Collaborated across departments to design and implement scalable systems.
+      </p>
+    ),
+  },
+  {
+    date: '2021-2023',
+    location: 'Quest Mindshare',
+    title: 'Senior Full-Stack Engineer',
+    content: (
+      <p>
+        Led efforts to build a SaaS platform for market research, including mobile, web, and backend systems.
+        Spearheaded critical technical initiatives as an early team member. Contributed across the stack in a fast-paced
+        product development environment.
+      </p>
+    ),
+  },
+  {
+    date: '2018-2021',
+    location: 'Anne Arundel County',
+    title: 'Full-Stack Engineer',
+    content: (
+      <p>
+        Created internal tools and mobile apps for county employees using React, React Native, Node.js, GraphQL, and SQL
+        Server. Led the development of one of the county’s first cross-platform mobile applications.
       </p>
     ),
   },
@@ -336,27 +371,22 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: `I'm always open to new opportunities, collaborations, or conversations—please feel free to get in touch if you'd like to discuss a project, explore potential partnerships, or simply connect about software development and technology.`,
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'jacobruth14@gmail.com',
+      href: 'mailto:jacobruth14@gmail.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
-    },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: 'Annapolis MD, USA',
+      href: '',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'jake-ruth',
+      href: 'https://github.com/jake-ruth',
     },
   ],
 };
@@ -365,9 +395,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/jake-ruth'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/jake-ruth-8350b2157/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/jakeruthmusic/?hl=en'},
 ];

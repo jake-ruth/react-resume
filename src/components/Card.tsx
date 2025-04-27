@@ -8,7 +8,7 @@ interface ICardProps {
 }
 
 export const Card: FC<ICardProps> = memo(props => {
-  const {title, description, url, imageUrl} = props;
+  const {title, description, url} = props;
 
   return (
     <div className="max-w-sm h-[450px] flex flex-col justify-between rounded-2xl overflow-hidden shadow-lg relative bg-black">

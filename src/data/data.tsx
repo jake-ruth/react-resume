@@ -6,15 +6,6 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -72,7 +63,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '/resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -122,19 +113,6 @@ export const aboutData: About = {
  * Skills section
  */
 export const skills: SkillGroup[] = [
-  {
-    name: 'Spoken languages',
-    skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'Conversational Spanish',
-        level: 3,
-      },
-    ],
-  },
   {
     name: 'Frontend development',
     skills: [
@@ -206,6 +184,19 @@ export const skills: SkillGroup[] = [
       },
     ],
   },
+  {
+    name: 'Spoken languages',
+    skills: [
+      {
+        name: 'English',
+        level: 10,
+      },
+      {
+        name: 'Conversational Spanish',
+        level: 3,
+      },
+    ],
+  },
 ];
 
 /**
@@ -213,70 +204,41 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Neurofret',
+    description: `A cross-platform mobile application for ear training on the guitar using React Native, Expo, Typescript,
+        Swift, Kotlin, and many more technologies. As the app has grown, more teammates have been added and I have taken
+        on the lead software engineer role, managing the team and growth of the application.`,
+    url: 'https://neurofret.com',
     image: porfolioImage1,
+    imageUrl: 'neurofret.png',
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Dtect',
+    description: `Dtect is web and mobile application for market research project managers used to automate market research projects, allow
+    for very large-scale projects using multiple suppliers, and is also designed to place many security checks in a project to reduce fraudulent
+    activity.`,
+    url: 'https://dtect.io',
     image: porfolioImage2,
+    imageUrl: 'dtect.png',
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
+    title: 'Daily Movement Snacks',
+    description: `Daily Movement Snacks is an iOS and Android app that helps develop a healthy craving for movement throughout the day. As
+    a software engineer, I saw the need to bring more movement into our day, and I partnered with multiple health and fitness influencers to create
+    the app.  In the app app, we offer a library of movements, challenges, and goals that you can use in quick movement snack breaks throughout the day 
+    to bring movement back into your life.`,
+    url: 'https://dailymovementsnacks.com',
+    image: porfolioImage2,
+    imageUrl: 'dms.png',
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
+    title: 'Practice Perfect',
+    description: `Practice Perfect is an app that allows musicians to create customized practice routines to suit their own goals and needs. 
+    Create a practice routine with a list of customizable practice items, set timers for each practice item, press play, and go! 
+    Practice Perfect will help you stay on track during your practice session.`,
+    url: 'https://apps.apple.com/us/app/practice-perfect-mobile/id1500441469',
+    image: porfolioImage2,
+    imageUrl: 'neurofret.png',
   },
 ];
 
